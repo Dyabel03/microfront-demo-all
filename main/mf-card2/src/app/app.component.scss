@@ -1,0 +1,22 @@
+.title_section {
+    text-align: center;
+}
+.content_img {
+    // width: 300px;
+    height: 220px;
+    .card_img {
+        width: 100%;
+    }
+}
+.row_btns {
+    text-align: center;
+    .btn_card {
+        text-decoration: none;
+        padding: 8px 20px;
+        background-color: #2eb1aa;
+        color: white;
+        font-weight: bold;
+        border: 1px solid #29cac1;
+        border-radius: 6px;
+    }
+}
