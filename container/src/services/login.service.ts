@@ -8,11 +8,13 @@ export function login(data: any) {
 } 
 
 export async function loginAPI(data: any) {
+
+    
     const _body = {
         usuario: data.email ,
         password: data.pass
     }
-    return fetch(url, {
+    const response = await fetch(url, {
         method: 'POST',
         mode: 'cors',
         headers: {
@@ -20,4 +22,9 @@ export async function loginAPI(data: any) {
         },
         body: JSON.stringify(_body)
     });
+    return await response.json();
 }
+
+
+  
+  

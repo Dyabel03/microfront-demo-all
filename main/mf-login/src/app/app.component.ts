@@ -59,8 +59,9 @@ export class AppComponent{
     // });
 
     const data = await loginAPI({email: this.email, pass: this.psw});
-    console.log('DATA', data.json());
-    this.singleSpaProps['EventBus'].emit({name:'onUserLogged',data});
+    console.log('-->', data);
+      this.singleSpaProps['EventBus'].emit({name:'onUserLogged',data});
+
   }
 
   ingresarByService() {
