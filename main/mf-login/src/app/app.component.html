@@ -1,7 +1,7 @@
 <section>
   <div class="container">
     <div class="column">
-      AA: {{email}}
+      AAA: {{email}}
       <label for="email">Email</label>
       <input type="email" name="email" [(ngModel)]="email" placeholder="Ingresa tu correo electrónico">
     </div>
@@ -10,7 +10,8 @@
       <input type="password" name="psw" [(ngModel)]="psw" placeholder="Ingresa tu contraseña">
     </div>
     <div class="btns">
-      <a (click)="ingresar()">Ingresar</a>
+      <a (click)="ingresarByEvent()">Ingresar (por Events)</a>
+      <a (click)="ingresarByService()">Ingresar (por Service)</a>
     </div>
   </div>
 </section>

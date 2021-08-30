@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "build:single-spa:mf-header": "ng build mf-header --prod",
-    "serve:single-spa:mf-header": "ng s --project mf-header --disable-host-check --port 4200 --live-reload false"
+    "serve:single-spa:mf-header": "ng s --project mf-header --disable-host-check --port 4100 --live-reload false"
   },
   "private": true,
   "dependencies": {
