@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   subscription?: Subscription;
   logged = false;
   user?:string;
+  userAPI?: string;
 
   constructor(private ChangeDetectorRef:ChangeDetectorRef){
 
@@ -40,6 +41,7 @@ export class AppComponent implements OnInit {
     console.log("on user logged listening header ", data);
     this.logged = true;
     this.user = data.email;
+    this.userAPI = data.user;
     this.ChangeDetectorRef.detectChanges();
   }
 

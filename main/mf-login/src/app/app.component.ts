@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { singleSpaPropsSubject } from 'src/single-spa/single-spa-props';
-import { login } from '../../../../container/src';
+import { login, loginAPI } from '../../../../container/src';
 import { Login } from './domain/models/Login/login';
 import { User } from './domain/models/User/user';
 import { GetLoginUseCases } from './domain/usecase/get-user-use-case';
@@ -45,12 +45,22 @@ export class AppComponent{
   }
   
 
-  ingresarByEvent() {
+  async ingresarByEvent() {
     console.log(`Ingresar Email: ${this.email} - psw: ${this.psw}`);
 
-    login({email: this.email, pass: this.psw}).subscribe(data => {
-      this.singleSpaProps['EventBus'].emit({name:'onUserLogged',data});
-    });
+    // login({email: this.email, pass: this.psw}).subscribe(data => {
+    //   this.singleSpaProps['EventBus'].emit({name:'onUserLogged',data});
+    // });
+
+    // loginAPI({email: this.email, pass: this.psw}).then(data => {
+    //   console.log('DATA', data.json());
+      
+    //   this.singleSpaProps['EventBus'].emit({name:'onUserLogged',data});
+    // });
+
+    const data = await loginAPI({email: this.email, pass: this.psw});
+    console.log('DATA', data.json());
+    this.singleSpaProps['EventBus'].emit({name:'onUserLogged',data});
   }
 
   ingresarByService() {
